@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0d0f12" />
+    <title>Yimusic Type</title>
+    <meta name="description" content="A music personality test based on 40 listening-style questions." />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section id="start-screen" class="screen screen-start">
+        <nav class="topbar" aria-label="Primary">
+          <div class="brand-mark">Yimusic</div>
+          <a href="#method" class="ghost-link">Method</a>
+        </nav>
+
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Music type demo</p>
+            <h1>What does your listening style reveal?</h1>
+            <p class="lead">Answer 40 questions about songs, artists, scenes, and emotions. Get a four-axis Yimusic Type with a clear score breakdown.</p>
+            <div class="hero-actions">
+              <button id="start-button" class="primary-button" type="button">Start the test</button>
+              <button id="sample-button" class="secondary-button" type="button">Try sample result</button>
+            </div>
+          </div>
+
+          <div class="equalizer-card" aria-hidden="true">
+            <div class="eq-row"><span>E/I</span><i style="--h: 76%"></i></div>
+            <div class="eq-row"><span>S/N</span><i style="--h: 48%"></i></div>
+            <div class="eq-row"><span>T/F</span><i style="--h: 62%"></i></div>
+            <div class="eq-row"><span>J/P</span><i style="--h: 54%"></i></div>
+          </div>
+        </div>
+
+        <div id="method" class="method-strip">
+          <span>40 scored questions</span>
+          <span>4 music axes</span>
+          <span>16 result types</span>
+          <span>Explainable scoring</span>
+        </div>
+      </section>
+
+      <section id="test-screen" class="screen screen-test hidden" aria-live="polite">
+        <header class="test-header">
+          <button id="back-to-start" class="icon-button" type="button" aria-label="Back to start">←</button>
+          <div>
+            <p class="eyebrow">Yimusic Type</p>
+            <h2 id="progress-title">Question 1 of 40</h2>
+          </div>
+          <div id="save-state" class="save-state">Draft saved</div>
+        </header>
+
+        <div class="progress-track" aria-hidden="true"><div id="progress-fill"></div></div>
+
+        <article class="question-card">
+          <p id="question-facet" class="question-facet">Listening behavior</p>
+          <h3 id="question-text"></h3>
+          <div id="answer-options" class="answer-options" role="radiogroup" aria-label="Answer options"></div>
+        </article>
+
+        <footer class="test-footer">
+          <button id="previous-button" class="secondary-button" type="button">Previous</button>
+          <button id="next-button" class="primary-button" type="button">Next</button>
+        </footer>
+      </section>
+
+      <section id="result-screen" class="screen screen-result hidden">
+        <nav class="topbar" aria-label="Result actions">
+          <div class="brand-mark">Yimusic</div>
+          <button id="restart-button" class="secondary-button" type="button">Retake</button>
+        </nav>
+
+        <div class="result-hero">
+          <p class="eyebrow">Your music personality</p>
+          <h2 id="result-code"></h2>
+          <h1 id="result-name"></h1>
+          <p id="result-tagline" class="lead"></p>
+          <div id="confidence-pill" class="confidence-pill"></div>
+        </div>
+
+        <div id="axis-breakdown" class="axis-breakdown"></div>
+
+        <div class="result-grid">
+          <article class="result-panel">
+            <h3>How you listen</h3>
+            <p id="result-summary"></p>
+          </article>
+          <article class="result-panel">
+            <h3>Try next</h3>
+            <p id="result-advice"></p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

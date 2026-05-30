@@ -1,0 +1,9 @@
+services:
+  yimusic-web:
+    build:
+      context: ..
+      dockerfile: apps/web/Dockerfile
+    container_name: yimusic-web
+    restart: unless-stopped
+    ports:
+      - "3088:80"
